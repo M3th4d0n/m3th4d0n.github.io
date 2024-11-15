@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>m3th4d0n</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000;
+            color: #ccc;
+            font-family: 'Courier New', monospace;
+            overflow: hidden;
+            position: relative;
+        }
+        @keyframes scrollText {
+            0% { transform: translateY(100%); }
+            100% { transform: translateY(-100%); }
+        }
+
+        .background-layer {
+            animation: scrollText 20s linear infinite;
+        }
+        .background-layer {
+            position: absolute;
+            top: 10%;
+            left: 5%;
+            width: 90%;
+            white-space: pre-wrap;
+            font-size: 1.8rem;
+            color: rgba(96, 96, 96, 0.6);
+            line-height: 1.5;
+            z-index: -2;
+            transform: rotate(-2deg);
+            pointer-events: none;
+            animation: slowMove 60s ease-in-out infinite, subtleGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes slowMove {
+            0% { transform: translateY(0) rotate(-2deg); }
+            50% { transform: translateY(-30px) rotate(-2deg); }
+            100% { transform: translateY(0) rotate(-2deg); }
+        }
+
+        @keyframes subtleGlow {
+            0%, 100% { 
+                text-shadow: 0 0 4px rgba(96, 96, 96, 0.5), 0 0 8px rgba(80, 80, 80, 0.5), 0 0 12px rgba(80, 80, 80, 0.5); 
+                color: rgba(96, 96, 96, 0.6);
+            }
+            50% { 
+                text-shadow: 0 0 6px rgba(80, 80, 80, 0.5), 0 0 10px rgba(64, 64, 64, 0.5), 0 0 14px rgba(64, 64, 64, 0.5);
+                color: rgba(80, 80, 80, 0.6);
+            }
+        }
+        @keyframes linkGlow {
+            0%, 100% { 
+                text-shadow: 0 0 4px rgba(255, 255, 255, 0.8), 0 0 8px rgba(0, 255, 0, 0.6), 0 0 12px rgba(0, 255, 0, 0.6);
+                color: #8bff88;
+            }
+            50% { 
+                text-shadow: 0 0 6px rgba(0, 255, 0, 0.8), 0 0 10px rgba(0, 255, 0, 1), 0 0 14px rgba(0, 255, 0, 1);
+            color: #00ff88;
+            }
+        }   
+
+        .links a {
+            color: #8bff88;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+            animation: linkGlow 1.5s ease-in-out infinite;
+        }
+
+        .section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            animation: neonGlow 3s ease-in-out infinite;
+            color: #8bff88;
+            text-shadow: 0px 0px 6px rgba(0, 255, 0, 0.6), 0px 0px 12px rgba(0, 255, 0, 0.4);
+        }
+
+        @keyframes neonGlow {
+            0%, 100% { 
+                text-shadow: 0 0 8px #8bff88, 0 0 16px #00ff00, 0 0 24px #00ff00; 
+                color: #8bff88;
+            }
+            50% { 
+                text-shadow: 0 0 12px #00ff88, 0 0 20px #00ff88, 0 0 30px #00ff88;
+                color: #00ff88;
+            }
+        }
+
+        @keyframes blink {
+            0% { opacity: 0.1; }
+            100% { opacity: 0.3; }
+        }
+        .compiler-errors {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: max-content;
+            background: rgba(0, 0, 0, 0.8);
+            color: #ff5555;
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            padding: 10px;
+            z-index: 10;
+            overflow: hidden;
+        }
+
+        @keyframes blinkCursor {
+            0%, 100% { border-right: 2px solid #ff5555; }
+            50% { border-right: 2px solid transparent; }
+        }
+
+        .typing {
+            display: inline-block;
+            border-right: 2px solid #ff5555;
+            animation: blinkCursor 0.8s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-layer">
+        using System;
+        
+        public class Program {
+            public static void Main() {
+                Console.WriteLine("m3th4d0n");
+
+                Console.WriteLine("m3th4d0n");
+                
+                Console.WriteLine("m3th4d0n");
+                
+                Console.WriteLine("m3th4d0n");
+                
+                Console.WriteLine("m3th4d0n");
+                
+                Console.WriteLine("m3th4d0n");
+                
+            }
+
+        }
+
+    </div>
+    <section class="section">
+        <h1>m3th4d0n</h1>
+        <div class="links">
+            
+            <a href="https://github.com/M3th4d0n" target="_blank">GitHub</a>
+            <a href="https://t.me/ImAngelOfDead" target="_blank">Telegram</a>
+        </div>
+    </section>
+    <div class="compiler-errors"><span class="typing"></span></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const lines = [
+                "[ERROR] Line 12: Unexpected token '}'",
+                "[ERROR] Line 27: 'Main' does not contain a definition for 'Run'",
+                "[ERROR] The coder has no brain",
+                "[ERROR] Line 50: NullReferenceException: Object reference not set to an instance of an object",
+                "КАК ЭТА ХУЙНЯ РАБОТАЕТ"
+
+            ];
+
+            const typingElement = document.querySelector(".typing");
+            let currentLine = 0;
+            let charIndex = 0;
+
+            function typeChar() {
+                if (currentLine < lines.length) {
+                    const line = lines[currentLine];
+
+                    if (charIndex < line.length) {
+                        typingElement.textContent += line[charIndex];
+                        charIndex++;
+                        setTimeout(typeChar, Math.random() * 50 + 30);
+                    } else {
+                        charIndex = 0;
+                        currentLine++;
+                        setTimeout(() => {
+                            typingElement.textContent += "\n";
+                            typeChar();
+                        }, 500);
+                    }
+                } else {
+                    setTimeout(() => {
+                        typingElement.textContent = "";
+                        currentLine = 0;
+                        typeChar();
+                    }, 2000);
+                }
+            }
+
+            typeChar();
+        });
+    </script>
+</body>
+</html>
